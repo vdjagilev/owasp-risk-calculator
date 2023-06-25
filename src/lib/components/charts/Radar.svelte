@@ -45,7 +45,7 @@
 				},
 				pointLabels: {
 					// color: 'rgb(209, 213, 219)',
-					color: 'red'
+					color: 'rgb(255, 99, 132)'
 				}
 			}
 		},
