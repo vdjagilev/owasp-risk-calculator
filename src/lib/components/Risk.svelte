@@ -7,7 +7,7 @@
 	import { editRisk } from '$lib/risk/Store';
 	import EditIcon from './EditIcon.svelte';
 	import Radar from './charts/Radar.svelte';
-	
+
 	export let risk: Risk;
 </script>
 
@@ -48,7 +48,7 @@
 		</div>
 		<div class="container justify-center">
 			<div class="w-1/2 mx-auto">
-				<Radar bind:risk={risk} />
+				<Radar bind:risk />
 			</div>
 		</div>
 	</div>

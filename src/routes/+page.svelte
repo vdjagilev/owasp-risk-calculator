@@ -6,8 +6,8 @@
 	import AddRisk from '$lib/components/actions/AddRisk.svelte';
 	import ClearRisks from '$lib/components/actions/ClearRisks.svelte';
 	import Separator from '$lib/components/Separator.svelte';
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
+	// import { page } from '$app/stores';
+	// import { goto } from '$app/navigation';
 	import EditRisk from '$lib/components/actions/EditRisk.svelte';
 
 	// console.log($page.url.searchParams.set('d', 'abc123'));

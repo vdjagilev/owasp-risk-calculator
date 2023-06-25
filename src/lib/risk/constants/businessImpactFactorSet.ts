@@ -45,24 +45,18 @@ export class BusinessImpactFactorSetBuilder implements IFactorSetBuilder {
 						{ 9: 'Brand damage' }
 					]
 				),
-				new Factor(
-					'nc',
-					'Non-Compliance',
-					'How much exposure does non-compliance introduce?',
-					0,
-					[
-						{ 0: 'N/A' },
-						{ 1: '' },
-						{ 2: 'Minor violation' },
-						{ 3: '' },
-						{ 4: '' },
-						{ 5: 'Clear violation' },
-						{ 6: '' },
-						{ 7: 'High provile violation' },
-						{ 8: '' },
-						{ 9: '' }
-					]
-				),
+				new Factor('nc', 'Non-Compliance', 'How much exposure does non-compliance introduce?', 0, [
+					{ 0: 'N/A' },
+					{ 1: '' },
+					{ 2: 'Minor violation' },
+					{ 3: '' },
+					{ 4: '' },
+					{ 5: 'Clear violation' },
+					{ 6: '' },
+					{ 7: 'High provile violation' },
+					{ 8: '' },
+					{ 9: '' }
+				]),
 				new Factor(
 					'pv',
 					'Privacy Violation',
