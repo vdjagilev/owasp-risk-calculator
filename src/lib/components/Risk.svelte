@@ -19,7 +19,7 @@
 		</Button>
 	</Heading>
 	<p><strong>Description:</strong></p>
-	<p>{risk.description}</p>
+	<p class="pb-5">{risk.description}</p>
 	<div class="risk">
 		<div class="grid grid-cols-4 gap-4">
 			{#each risk.likelihoodFactorSets as factorSet}

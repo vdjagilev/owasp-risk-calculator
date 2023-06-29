@@ -11,7 +11,7 @@
 
 <div>
 	<div>
-		<Heading tag="h3">
+		<Heading tag="h3" customSize="text-2xl font-extrabold">
 			{factorSet.name}
 			<Details bind:entity={factorSet} />
 		</Heading>
