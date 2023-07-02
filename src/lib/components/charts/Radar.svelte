@@ -44,7 +44,7 @@
 					color: 'rgb(255, 99, 132)'
 				}
 			}
-		},
+		}
 	};
 
 	ChartJS.register(Title, Tooltip, Legend, PointElement, RadialLinearScale, LineElement, Filler);
