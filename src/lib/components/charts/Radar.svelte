@@ -15,14 +15,11 @@
 
 	export let risk: Risk;
 
-	// ChartJS.defaults.color = 'rgb(209, 213, 219)';
-
 	const options = {
 		responsive: true,
 		elements: {
 			line: {
 				borderColor: 'rgb(209, 213, 219)'
-				// backgroundColor: 'rgb(209, 213, 219)',
 			}
 		},
 		scales: {
@@ -44,18 +41,10 @@
 					color: 'black'
 				},
 				pointLabels: {
-					// color: 'rgb(209, 213, 219)',
 					color: 'rgb(255, 99, 132)'
 				}
 			}
 		},
-		plugins: {
-			legend: {
-				labels: {
-					// color: 'black',
-				}
-			}
-		}
 	};
 
 	ChartJS.register(Title, Tooltip, Legend, PointElement, RadialLinearScale, LineElement, Filler);
