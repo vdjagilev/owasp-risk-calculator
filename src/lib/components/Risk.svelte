@@ -4,18 +4,22 @@
 	import FactorSetComponent from './FactorSet.svelte';
 	import FactorResult from './FactorResult.svelte';
 	import RiskResult from './RiskResult.svelte';
-	import { editRisk } from '$lib/risk/Store';
+	import { editRisk, deleteRisk } from '$lib/risk/Store';
 	import EditIcon from './EditIcon.svelte';
 	import Radar from './charts/Radar.svelte';
+	import DeleteIcon from './DeleteIcon.svelte';
 
 	export let risk: Risk;
 </script>
 
-<div>
+<div class="break-all">
 	<Heading tag="h2">
-		Risk #{risk.id}: {risk.name}
+		Risk: {risk.name}
 		<Button color="none" size="xs" btnClass="xs p-0 m-0" on:click={() => editRisk.set(risk)}>
 			<EditIcon />
+		</Button>
+		<Button color="none" size="xs" btnClass="xs p-0 m-0" on:click={() => deleteRisk.set(risk)}>
+			<DeleteIcon />
 		</Button>
 	</Heading>
 	<p><strong>Description:</strong></p>

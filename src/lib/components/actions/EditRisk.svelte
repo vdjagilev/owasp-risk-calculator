@@ -45,6 +45,7 @@
 				type="text"
 				name="name"
 				placeholder="Leave port 8080 opened"
+				maxlength="50"
 				required
 				bind:value={name}
 			/>

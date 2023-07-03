@@ -3,3 +3,4 @@ import type Risk from './Risk';
 
 export const risks = writable<Risk[]>([]);
 export const editRisk = writable<Risk | null>(null);
+export const deleteRisk = writable<Risk | null>(null);

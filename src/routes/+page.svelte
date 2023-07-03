@@ -9,6 +9,7 @@
 	// import { page } from '$app/stores';
 	// import { goto } from '$app/navigation';
 	import EditRisk from '$lib/components/actions/EditRisk.svelte';
+	import DeleteRisk from '$lib/components/actions/DeleteRisk.svelte';
 
 	// console.log($page.url.searchParams.set('d', 'abc123'));
 	// setTimeout(() => {
@@ -30,4 +31,5 @@
 		{/each}
 	</div>
 	<EditRisk />
+	<DeleteRisk />
 </div>
