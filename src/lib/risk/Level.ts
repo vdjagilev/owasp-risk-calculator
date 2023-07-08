@@ -30,9 +30,9 @@ export type LevelStrings = keyof typeof Level;
 export function getLevelByScore(score: number): Level {
 	if (score <= 0) {
 		return Level.Note;
-	} else if (score <= 2) {
+	} else if (score < 3) {
 		return Level.Low;
-	} else if (score <= 5) {
+	} else if (score < 6) {
 		return Level.Medium;
 	} else {
 		return Level.High;
