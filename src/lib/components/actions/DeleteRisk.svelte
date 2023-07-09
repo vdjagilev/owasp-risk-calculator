@@ -2,20 +2,20 @@
 	import { risks, deleteRisk } from '$lib/risk/Store';
 	import { Button, Modal } from 'flowbite-svelte';
 
-    let popupModal = false;
+	let popupModal = false;
 
-    function confirmDelete() {
-        if ($deleteRisk) {
-            risks.update((risks) => {
-                return risks.filter((risk) => risk.id !== $deleteRisk?.id);
-            });
-        }
-        popupModal = false;
-    }
+	function confirmDelete() {
+		if ($deleteRisk) {
+			risks.update((risks) => {
+				return risks.filter((risk) => risk.id !== $deleteRisk?.id);
+			});
+		}
+		popupModal = false;
+	}
 
-    deleteRisk.subscribe((risk) => {
-        popupModal = !!risk;
-    });
+	deleteRisk.subscribe((risk) => {
+		popupModal = !!risk;
+	});
 </script>
 
 <Modal bind:open={popupModal} size="xs" autoclose>
