@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type IDescriptionable from '$lib/risk/IDescriptionable';
 	import { Popover } from 'flowbite-svelte';
-	import InfoIcon from './InfoIcon.svelte';
+	import InfoIcon from './icons/InfoIcon.svelte';
 
 	export let entity: IDescriptionable;
 	export let smallIcon = false;

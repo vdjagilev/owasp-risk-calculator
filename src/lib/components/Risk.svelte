@@ -5,9 +5,9 @@
 	import FactorResult from './FactorResult.svelte';
 	import RiskResult from './RiskResult.svelte';
 	import { editRisk, deleteRisk } from '$lib/risk/Store';
-	import EditIcon from './EditIcon.svelte';
+	import EditIcon from './icons/EditIcon.svelte';
 	import Radar from './charts/Radar.svelte';
-	import DeleteIcon from './DeleteIcon.svelte';
+	import DeleteIcon from './icons/DeleteIcon.svelte';
 
 	export let risk: Risk;
 </script>
