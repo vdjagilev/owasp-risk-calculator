@@ -15,6 +15,8 @@ export default class Risk {
 	public likelihoodScoreSource: IScoreSource;
 	public impactScoreSource: IScoreSource;
 
+	public mitigation: Risk | null = null;
+
 	constructor(
 		id: number,
 		name: string,

@@ -18,6 +18,14 @@ export default class RiskDataset {
 					data: [],
 					tension: 0.1,
 					label: this.risk.name
+				},
+				{
+					backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					borderColor: 'rgb(54, 162, 235)',
+					fill: true,
+					data: [],
+					tension: 0.1,
+					label: this.risk?.mitigation?.name
 				}
 			]
 		};
@@ -33,6 +41,20 @@ export default class RiskDataset {
 			for (let j = 0; j < this.risk.impactFactorSets[i].factors.length; j++) {
 				data.labels.push(this.risk.impactFactorSets[i].factors[j].name);
 				data.datasets[0].data.push(this.risk.impactFactorSets[i].factors[j].score);
+			}
+		}
+
+		if (this.risk?.mitigation) {
+			for (let i = 0; i < this.risk.mitigation.likelihoodFactorSets.length; i++) {
+				for (let j = 0; j < this.risk.mitigation.likelihoodFactorSets[i].factors.length; j++) {
+					data.datasets[1].data.push(this.risk.mitigation.likelihoodFactorSets[i].factors[j].score);
+				}
+			}
+
+			for (let i = 0; i < this.risk.mitigation.impactFactorSets.length; i++) {
+				for (let j = 0; j < this.risk.mitigation.impactFactorSets[i].factors.length; j++) {
+					data.datasets[1].data.push(this.risk.mitigation.impactFactorSets[i].factors[j].score);
+				}
 			}
 		}
 

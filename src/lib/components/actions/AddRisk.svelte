@@ -9,7 +9,14 @@
 
 	function addNewRisk() {
 		risks.update((risks) => {
-			return [...risks, Risk.generateNewRisk(risks.length + 1, name, description)];
+			let risk = Risk.generateNewRisk(risks.length + 1, name, description);
+			risk.mitigation = Risk.generateNewRisk(
+				risk.id,
+				`${risk.name} (mitigation)`,
+				risk.description
+			);
+
+			return [...risks, risk];
 		});
 		formModal = false;
 		name = '';
