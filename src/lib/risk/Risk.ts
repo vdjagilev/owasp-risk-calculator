@@ -15,6 +15,8 @@ export default class Risk {
 	public likelihoodScoreSource: IScoreSource;
 	public impactScoreSource: IScoreSource;
 
+	public mitigation: Risk | null = null;
+
 	constructor(
 		id: number,
 		name: string,
@@ -74,6 +76,27 @@ export default class Risk {
 			return businessFactorSet.getFactor();
 		}
 		return techFactorSet.getFactor();
+	}
+
+	public static copyFactorScores(source: Risk, target: Risk): void {
+		for (let i = 0; i < source.likelihoodFactorSets.length; i++) {
+			const sourceFactorSet = source.likelihoodFactorSets[i];
+			const targetFactorSet = target.likelihoodFactorSets[i];
+			for (let j = 0; j < sourceFactorSet.factors.length; j++) {
+				const sourceFactor = sourceFactorSet.factors[j];
+				const targetFactor = targetFactorSet.factors[j];
+				targetFactor.score = sourceFactor.score;
+			}
+		}
+		for (let i = 0; i < source.impactFactorSets.length; i++) {
+			const sourceFactorSet = source.impactFactorSets[i];
+			const targetFactorSet = target.impactFactorSets[i];
+			for (let j = 0; j < sourceFactorSet.factors.length; j++) {
+				const sourceFactor = sourceFactorSet.factors[j];
+				const targetFactor = targetFactorSet.factors[j];
+				targetFactor.score = sourceFactor.score;
+			}
+		}
 	}
 
 	public static generateNewRisk(id: number, name: string, description: string): Risk {

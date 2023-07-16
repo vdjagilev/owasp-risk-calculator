@@ -9,7 +9,9 @@
 
 	function addNewRisk() {
 		risks.update((risks) => {
-			return [...risks, Risk.generateNewRisk(risks.length + 1, name, description)];
+			let risk = Risk.generateNewRisk(risks.length + 1, name, description);
+
+			return [...risks, risk];
 		});
 		formModal = false;
 		name = '';
@@ -27,8 +29,8 @@
 			<Input
 				type="text"
 				name="name"
-				placeholder="Leave port 8080 opened"
-				maxlength="50"
+				placeholder="Leave internal service open to the internet"
+				maxlength="80"
 				required
 				bind:value={name}
 			/>
