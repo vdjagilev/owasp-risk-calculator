@@ -1,18 +1,15 @@
-# create-svelte
+# OWASP Risk Calculator
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+An honest attempt to create yet another OWASP risk calculator. This one also contains mitigation part, which is displayed on the radar chart below.
 
-## Creating a project
+Inspired by [OWASP Risk Rating Methodology](https://owasp.org/www-community/OWASP_Risk_Rating_Methodology) and [OWASP Risk Rating Calculator](https://owasp-risk-rating.com/).
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Screenshots
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+![Main window](./docs/images/1.png)
+![Risk factors window](./docs/images/2.png)
+![Mitigation factors window](./docs/images/3.png)
+![Radar chart with mitigation](./docs/images/4.png)
 
 ## Developing
 
