@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Details from '$lib/components/Details.svelte';
-	import type Factor from '$lib/risk/Factor';
+	import type Factor from '$lib/risk/Factor.svelte';
 	import { Select, Label } from 'flowbite-svelte';
 
-	export let factor: Factor;
+	let { factor = $bindable() }: { factor: Factor } = $props();
 
 	function renderFactorText(key: number, value: string) {
 		return 0 === value.length ? key : `${key}: ${value}`;

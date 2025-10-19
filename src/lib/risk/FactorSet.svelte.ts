@@ -1,12 +1,12 @@
 import type IScoreSource from './IScoreSource';
-import type Factor from './Factor';
+import type Factor from './Factor.svelte';
 import type IDescriptionable from './IDescriptionable';
 
 export default class FactorSet implements IScoreSource, IDescriptionable {
-	public id: string;
-	public name: string;
+	public id = $state<string>('');
+	public name = $state<string>('');
 	description: string;
-	public factors: Factor[];
+	public factors = $state<Factor[]>([]);
 
 	constructor(id: string, name: string, description: string, factors: Factor[]) {
 		this.id = id;

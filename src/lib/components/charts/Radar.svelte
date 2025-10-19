@@ -10,10 +10,10 @@
 		LineElement,
 		Filler
 	} from 'chart.js';
-	import type Risk from '$lib/risk/Risk';
+	import type Risk from '$lib/risk/Risk.svelte';
 	import RiskDataset from '$lib/risk/charts/RiskDataset';
 
-	export let risk: Risk;
+	let { risk = $bindable() }: { risk: Risk } = $props();
 
 	const options = {
 		responsive: true,
@@ -49,7 +49,7 @@
 
 	ChartJS.register(Title, Tooltip, Legend, PointElement, RadialLinearScale, LineElement, Filler);
 
-	$: data = new RiskDataset(risk).getData();
+	let data = $derived(new RiskDataset(risk).getData());
 </script>
 
 <Radar class="mt-5 dark:bg-gray-900" {data} {options} />

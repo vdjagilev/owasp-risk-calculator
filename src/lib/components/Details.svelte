@@ -3,10 +3,12 @@
 	import { Popover } from 'flowbite-svelte';
 	import InfoIcon from './icons/InfoIcon.svelte';
 
-	export let entity: IDescriptionable;
-	export let smallIcon = false;
+	let {
+		entity = $bindable(),
+		smallIcon = false
+	}: { entity: IDescriptionable; smallIcon?: boolean } = $props();
 
-	$: iconSize = smallIcon ? 20 : 25;
+	let iconSize = $derived(smallIcon ? 20 : 25);
 </script>
 
 <span id="badge-{entity.getId()}" class="inline-flex">

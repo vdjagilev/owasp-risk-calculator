@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type FactorSet from '$lib/risk/FactorSet';
+	import type FactorSet from '$lib/risk/FactorSet.svelte';
 	import Factor from './Factor.svelte';
 	import Details from '$lib/components/Details.svelte';
 	import FactorResult from '$lib/components/FactorResult.svelte';
 	import { Heading } from 'flowbite-svelte';
 	import Separator from './Separator.svelte';
 
-	export let factorSet: FactorSet;
+	let { factorSet = $bindable() }: { factorSet: FactorSet } = $props();
 </script>
 
 <div>
@@ -18,8 +18,8 @@
 	</div>
 	<Separator />
 	<div>
-		{#each factorSet.factors as factor}
-			<Factor bind:factor />
+		{#each factorSet.factors as factor, i}
+			<Factor bind:factor={factorSet.factors[i]} />
 		{/each}
 	</div>
 	<FactorResult bind:name={factorSet.name} bind:id={factorSet.id} bind:scoreSource={factorSet} />

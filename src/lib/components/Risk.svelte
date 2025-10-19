@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Risk from '$lib/risk/Risk';
+	import Risk from '$lib/risk/Risk.svelte';
 	import { Heading, Button, Tabs, TabItem } from 'flowbite-svelte';
 	import { editRisk, deleteRisk } from '$lib/risk/Store';
 	import EditIcon from './icons/EditIcon.svelte';
@@ -8,7 +8,7 @@
 	import RiskForm from './RiskForm.svelte';
 	import AddIcon from './icons/AddIcon.svelte';
 
-	export let risk: Risk | null = null;
+	let { risk = $bindable(null) }: { risk: Risk | null } = $props();
 
 	function addMitigation() {
 		if (risk) {
@@ -25,10 +25,10 @@
 	<div class="break-all">
 		<Heading tag="h2">
 			Risk: {risk.name}
-			<Button color="none" size="xs" class="xs p-0 m-0" on:click={() => editRisk.set(risk)}>
+			<Button color="none" size="xs" class="xs p-0 m-0" onclick={() => editRisk.set(risk)}>
 				<EditIcon />
 			</Button>
-			<Button color="none" size="xs" class="xs p-0 m-0" on:click={() => deleteRisk.set(risk)}>
+			<Button color="none" size="xs" class="xs p-0 m-0" onclick={() => deleteRisk.set(risk)}>
 				<DeleteIcon />
 			</Button>
 		</Heading>
@@ -36,7 +36,7 @@
 		<pre class="pb-5">{risk.description}</pre>
 		{#if risk.mitigation === null}
 			<p class="pb-5">
-				<Button color="primary" on:click={addMitigation}>
+				<Button color="primary" onclick={addMitigation}>
 					<AddIcon />&nbsp; Add mitigation
 				</Button>
 			</p>

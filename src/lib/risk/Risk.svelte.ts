@@ -1,5 +1,5 @@
 import type IScoreSource from './IScoreSource';
-import type FactorSet from './FactorSet';
+import type FactorSet from './FactorSet.svelte';
 import { BusinessImpactFactorSetBuilder } from './constants/businessImpactFactorSet';
 import { LikelihoodFactorSetBuilder } from './constants/likelihoodFactorSet';
 import { VulnerabilityFactorSetBuilder } from './constants/vulnerabilityFactorSet';
@@ -7,15 +7,15 @@ import { TechImpactFactorSetBuilder } from './constants/techImpactFactorSet';
 
 export default class Risk {
 	public id: number;
-	public name: string;
-	public description: string;
-	public likelihoodFactorSets: FactorSet[];
-	public impactFactorSets: FactorSet[];
+	public name = $state<string>('');
+	public description = $state<string>('');
+	public likelihoodFactorSets = $state<FactorSet[]>([]);
+	public impactFactorSets = $state<FactorSet[]>([]);
 
-	public likelihoodScoreSource: IScoreSource;
-	public impactScoreSource: IScoreSource;
+	public likelihoodScoreSource = $state<IScoreSource>({} as IScoreSource);
+	public impactScoreSource = $state<IScoreSource>({} as IScoreSource);
 
-	public mitigation: Risk | null = null;
+	public mitigation = $state<Risk | null>(null);
 
 	constructor(
 		id: number,

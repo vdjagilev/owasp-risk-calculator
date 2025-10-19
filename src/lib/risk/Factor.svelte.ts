@@ -4,7 +4,7 @@ export default class Factor implements IDescriptionable {
 	public id: string;
 	public name: string;
 	public description: string;
-	public score: number;
+	public score = $state<number>(0);
 	public options: object[] = [];
 
 	constructor(id: string, name: string, description: string, score: number, options: object[]) {
