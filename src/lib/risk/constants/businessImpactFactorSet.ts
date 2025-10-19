@@ -1,5 +1,5 @@
-import Factor from '../Factor';
-import FactorSet from '../FactorSet';
+import Factor from '../Factor.svelte';
+import FactorSet from '../FactorSet.svelte';
 import type IFactorSetBuilder from '../IFactorSetBuilder';
 
 export class BusinessImpactFactorSetBuilder implements IFactorSetBuilder {

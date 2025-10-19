@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import type Risk from './Risk';
+import type Risk from './Risk.svelte';
 
 export const risks = writable<Risk[]>([]);
 export const editRisk = writable<Risk | null>(null);

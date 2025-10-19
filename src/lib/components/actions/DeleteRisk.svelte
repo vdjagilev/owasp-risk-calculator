@@ -2,7 +2,12 @@
 	import { risks, deleteRisk } from '$lib/risk/Store';
 	import { Button, Modal } from 'flowbite-svelte';
 
-	let popupModal = false;
+	let popupModal = $state(false);
+
+	// Sync modal state with deleteRisk store
+	$effect(() => {
+		popupModal = !!$deleteRisk;
+	});
 
 	function confirmDelete() {
 		if ($deleteRisk) {
@@ -12,10 +17,6 @@
 		}
 		popupModal = false;
 	}
-
-	deleteRisk.subscribe((risk) => {
-		popupModal = !!risk;
-	});
 </script>
 
 <Modal bind:open={popupModal} size="xs" autoclose>
@@ -37,7 +38,7 @@
 		<h3 class="mb-5 break-all text-lg font-normal text-gray-500 dark:text-gray-400">
 			Are you sure you want to delete the risk: {$deleteRisk?.name}?
 		</h3>
-		<Button color="red" class="mr-2" on:click={() => confirmDelete()}>Yes</Button>
+		<Button color="red" class="mr-2" onclick={() => confirmDelete()}>Yes</Button>
 		<Button color="alternative">No</Button>
 	</div>
 </Modal>

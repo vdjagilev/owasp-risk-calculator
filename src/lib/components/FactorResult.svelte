@@ -2,10 +2,12 @@
 	import type IScoreSource from '$lib/risk/IScoreSource';
 	import { Level, getColor, getLevelByScore } from '$lib/risk/Level';
 
-	export let name: string;
-	export let id: string;
-	export let scoreSource: IScoreSource;
-	export let precision = 2;
+	let {
+		name = $bindable(),
+		id = $bindable(),
+		scoreSource = $bindable(),
+		precision = 2
+	}: { name: string; id: string; scoreSource: IScoreSource; precision?: number } = $props();
 
 	function renderFactorNumber(factorScrore: number): string {
 		return factorScrore.toFixed(precision);

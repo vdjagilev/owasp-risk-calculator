@@ -2,8 +2,8 @@
 	import { risks } from '$lib/risk/Store';
 	import { Button, Modal } from 'flowbite-svelte';
 
-	let popupModal = false;
-	let popupClearInfoModal = false;
+	let popupModal = $state(false);
+	let popupClearInfoModal = $state(false);
 
 	function showPopup() {
 		if ($risks.length > 0) {
@@ -18,7 +18,7 @@
 	}
 </script>
 
-<Button on:click={showPopup}>Clear</Button>
+<Button onclick={showPopup}>Clear</Button>
 
 <Modal bind:open={popupClearInfoModal} size="xs" autoclose>
 	<div class="text-center">
@@ -62,7 +62,7 @@
 		<h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
 			Are you sure you want to clear all the risks?
 		</h3>
-		<Button color="red" class="mr-2" on:click={() => clearRisks()}>Yes</Button>
+		<Button color="red" class="mr-2" onclick={() => clearRisks()}>Yes</Button>
 		<Button color="alternative">No</Button>
 	</div>
 </Modal>

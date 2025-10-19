@@ -1,4 +1,4 @@
-import type Risk from '../Risk';
+import type Risk from '../Risk.svelte';
 
 export default class RiskDataset {
 	risk: Risk;
