@@ -7,6 +7,7 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			scss: {
+				// @ts-expect-error - modern-compiler is valid but not in types yet
 				api: 'modern-compiler'
 			}
 		}
