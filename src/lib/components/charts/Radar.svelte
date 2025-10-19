@@ -52,4 +52,4 @@
 	$: data = new RiskDataset(risk).getData();
 </script>
 
-<Radar class="mt-5 dark:bg-gray-900" bind:data {options} />
+<Radar class="mt-5 dark:bg-gray-900" {data} {options} />
