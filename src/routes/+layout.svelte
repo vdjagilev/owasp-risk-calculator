@@ -1,12 +1,17 @@
 <script>
 	import '../app.postcss';
-	import { setContext } from 'svelte';
+	import { setContext, onMount } from 'svelte';
 	import { risks } from '$lib/risk/Store';
-	import './style.scss';
 	import { Footer, A } from 'flowbite-svelte';
 
 	setContext('risks', risks);
 	setContext('editRisk', null);
+
+	onMount(async () => {
+		if (typeof window !== 'undefined') {
+			await import('flowbite');
+		}
+	});
 </script>
 
 <div>

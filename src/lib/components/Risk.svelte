@@ -25,10 +25,10 @@
 	<div class="break-all">
 		<Heading tag="h2">
 			Risk: {risk.name}
-			<Button color="none" size="xs" class="xs p-0 m-0" onclick={() => editRisk.set(risk)}>
+			<Button color="light" size="xs" class="xs p-0 m-0" onclick={() => editRisk.set(risk)}>
 				<EditIcon />
 			</Button>
-			<Button color="none" size="xs" class="xs p-0 m-0" onclick={() => deleteRisk.set(risk)}>
+			<Button color="light" size="xs" class="xs p-0 m-0" onclick={() => deleteRisk.set(risk)}>
 				<DeleteIcon />
 			</Button>
 		</Heading>
@@ -43,11 +43,13 @@
 		{/if}
 		<div class="risk">
 			<Tabs>
+				<!-- svelte-ignore a11y_no_static_element_interactions -->
 				<TabItem open>
 					<span slot="title">Risk</span>
 					<RiskForm bind:risk />
 				</TabItem>
 				{#if risk.mitigation !== null}
+					<!-- svelte-ignore a11y_no_static_element_interactions -->
 					<TabItem>
 						<span slot="title">Mitigation</span>
 						<RiskForm bind:risk={risk.mitigation} />
