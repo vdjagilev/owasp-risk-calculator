@@ -30,7 +30,7 @@
 				type="text"
 				name="name"
 				placeholder="Leave internal service open to the internet"
-				maxlength="80"
+				maxlength={80}
 				required
 				bind:value={name}
 			/>
@@ -42,7 +42,7 @@
 				placeholder="Description"
 				required
 				bind:value={description}
-				rows="8"
+				rows={8}
 			/>
 		</Label>
 		<Button type="submit" class="w-full1">Add New Risk</Button>

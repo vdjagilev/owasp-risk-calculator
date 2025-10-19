@@ -45,7 +45,7 @@
 				type="text"
 				name="name"
 				placeholder="Leave port 8080 opened"
-				maxlength="50"
+				maxlength={50}
 				required
 				bind:value={name}
 			/>
@@ -57,7 +57,7 @@
 				placeholder="Description"
 				required
 				bind:value={description}
-				rows="8"
+				rows={8}
 			/>
 		</Label>
 		<Button type="submit" class="w-full1">Edit Risk</Button>

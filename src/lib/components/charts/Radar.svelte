@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Radar } from 'svelte-chartjs';
+	import { Radar } from 'svelte5-chartjs';
 	import {
 		Chart as ChartJS,
 		Title,

@@ -25,10 +25,10 @@
 	<div class="break-all">
 		<Heading tag="h2">
 			Risk: {risk.name}
-			<Button color="none" size="xs" btnClass="xs p-0 m-0" on:click={() => editRisk.set(risk)}>
+			<Button color="none" size="xs" class="xs p-0 m-0" on:click={() => editRisk.set(risk)}>
 				<EditIcon />
 			</Button>
-			<Button color="none" size="xs" btnClass="xs p-0 m-0" on:click={() => deleteRisk.set(risk)}>
+			<Button color="none" size="xs" class="xs p-0 m-0" on:click={() => deleteRisk.set(risk)}>
 				<DeleteIcon />
 			</Button>
 		</Heading>
