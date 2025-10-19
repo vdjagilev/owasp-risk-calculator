@@ -5,6 +5,27 @@ import { LikelihoodFactorSetBuilder } from './constants/likelihoodFactorSet';
 import { VulnerabilityFactorSetBuilder } from './constants/vulnerabilityFactorSet';
 import { TechImpactFactorSetBuilder } from './constants/techImpactFactorSet';
 
+// Top-level classes for score sources to avoid inline class warnings
+class LikelihoodScoreSource implements IScoreSource {
+	risk: Risk;
+	constructor(risk: Risk) {
+		this.risk = risk;
+	}
+	getFactor(): number {
+		return this.risk.getLikelihood();
+	}
+}
+
+class ImpactScoreSource implements IScoreSource {
+	risk: Risk;
+	constructor(risk: Risk) {
+		this.risk = risk;
+	}
+	getFactor(): number {
+		return this.risk.getImpact();
+	}
+}
+
 export default class Risk {
 	public id: number;
 	public name = $state<string>('');
@@ -35,27 +56,11 @@ export default class Risk {
 	}
 
 	public getRiskLikelihoodScoreSource(): IScoreSource {
-		return new (class implements IScoreSource {
-			risk: Risk;
-			public constructor(risk: Risk) {
-				this.risk = risk;
-			}
-			public getFactor(): number {
-				return this.risk.getLikelihood();
-			}
-		})(this);
+		return new LikelihoodScoreSource(this);
 	}
 
 	public getRiskImpactScoreSource(): IScoreSource {
-		return new (class implements IScoreSource {
-			risk: Risk;
-			public constructor(risk: Risk) {
-				this.risk = risk;
-			}
-			public getFactor(): number {
-				return this.risk.getImpact();
-			}
-		})(this);
+		return new ImpactScoreSource(this);
 	}
 
 	public getLikelihood(): number {
