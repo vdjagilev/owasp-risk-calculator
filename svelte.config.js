@@ -10,7 +10,13 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		preprocess({
-			postcss: true
+			postcss: true,
+			scss: {
+				api: 'modern-compiler'
+			},
+			sass: {
+				api: 'modern-compiler'
+			}
 		})
 	],
 
