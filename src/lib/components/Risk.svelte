@@ -33,7 +33,7 @@
 			</Button>
 		</Heading>
 		<p><strong>Description:</strong></p>
-		<pre class="pb-5">{risk.description}</pre>
+		<pre class="pb-5 whitespace-pre-wrap break-words overflow-x-auto">{risk.description}</pre>
 		{#if risk.mitigation === null}
 			<p class="pb-5">
 				<Button color="primary" onclick={addMitigation}>
