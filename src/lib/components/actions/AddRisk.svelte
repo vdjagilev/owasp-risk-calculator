@@ -50,6 +50,7 @@
 				required
 				bind:value={description}
 				rows={8}
+				class="w-full"
 			/>
 		</Label>
 		<Button type="submit" class="w-full1">Add New Risk</Button>
