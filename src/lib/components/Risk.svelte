@@ -25,10 +25,10 @@
 	<div class="break-all">
 		<Heading tag="h2">
 			Risk: {risk.name}
-			<Button color="light" size="xs" class="xs p-0 m-0" onclick={() => editRisk.set(risk)}>
+			<Button color="light" size="xs" class="xs p-0 m-0 !border-0 !bg-transparent hover:!bg-transparent" onclick={() => editRisk.set(risk)}>
 				<EditIcon />
 			</Button>
-			<Button color="light" size="xs" class="xs p-0 m-0" onclick={() => deleteRisk.set(risk)}>
+			<Button color="light" size="xs" class="xs p-0 m-0 !border-0 !bg-transparent hover:!bg-transparent" onclick={() => deleteRisk.set(risk)}>
 				<DeleteIcon />
 			</Button>
 		</Heading>
