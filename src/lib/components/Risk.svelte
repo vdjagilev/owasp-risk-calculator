@@ -44,14 +44,12 @@
 		<div class="risk">
 			<Tabs>
 				<!-- svelte-ignore a11y_no_static_element_interactions -->
-				<TabItem open>
-					<span slot="title">Risk</span>
+				<TabItem open title="Risk">
 					<RiskForm bind:risk />
 				</TabItem>
 				{#if risk.mitigation !== null}
 					<!-- svelte-ignore a11y_no_static_element_interactions -->
-					<TabItem>
-						<span slot="title">Mitigation</span>
+					<TabItem title="Mitigation">
 						<RiskForm bind:risk={risk.mitigation} />
 					</TabItem>
 				{/if}
