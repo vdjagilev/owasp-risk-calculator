@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, Modal, Label, Input, Textarea } from 'flowbite-svelte';
-	import { risks } from '$lib/risk/Store';
-	import Risk from '$lib/risk/Risk.svelte';
+	import { risks } from '#lib/risk/Store.js';
+	import Risk from '#lib/risk/Risk.svelte.js';
 
 	let formModal = $state(false);
 	let name = $state('');

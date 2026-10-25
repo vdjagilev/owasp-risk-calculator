@@ -10,8 +10,8 @@
 		LineElement,
 		Filler
 	} from 'chart.js';
-	import type Risk from '$lib/risk/Risk.svelte';
-	import RiskDataset from '$lib/risk/charts/RiskDataset';
+	import type Risk from '#lib/risk/Risk.svelte.js';
+	import RiskDataset from '#lib/risk/charts/RiskDataset.js';
 
 	let { risk = $bindable() }: { risk: Risk } = $props();
 

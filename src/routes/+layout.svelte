@@ -1,7 +1,7 @@
 <script>
-	import '../app.postcss';
+	import '../app.css';
 	import { setContext, onMount } from 'svelte';
-	import { risks } from '$lib/risk/Store';
+	import { risks } from '#lib/risk/Store.js';
 	import { Footer, A } from 'flowbite-svelte';
 
 	setContext('risks', risks);
@@ -19,8 +19,12 @@
 		<slot />
 	</main>
 
-	<Footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
-		<p class="text-base text-gray-900 dark:text-white leading-normal font-normal text-left whitespace-normal">
+	<Footer
+		class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800"
+	>
+		<p
+			class="text-base text-gray-900 dark:text-white leading-normal font-normal text-left whitespace-normal"
+		>
 			Based on <A
 				href="https://owasp.org/www-community/OWASP_Risk_Rating_Methodology"
 				target="_blank"
@@ -28,7 +32,9 @@
 				>OWASP Risk Rating Methodology
 			</A>
 		</p>
-		<p class="text-base text-gray-900 dark:text-white leading-normal font-normal text-left whitespace-normal">
+		<p
+			class="text-base text-gray-900 dark:text-white leading-normal font-normal text-left whitespace-normal"
+		>
 			Inspired by <A
 				href="https://owasp-risk-rating.com/"
 				target="_blank"

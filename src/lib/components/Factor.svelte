@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Details from '$lib/components/Details.svelte';
-	import type Factor from '$lib/risk/Factor.svelte';
+	import Details from '#lib/components/Details.svelte';
+	import type Factor from '#lib/risk/Factor.svelte.js';
 	import { Select, Label } from 'flowbite-svelte';
 
 	let { factor = $bindable() }: { factor: Factor } = $props();

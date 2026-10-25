@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type Risk from '$lib/risk/Risk.svelte';
-	import { RiskSeverity, getColor, getSeverityByLevels } from '$lib/risk/RiskSeverity';
-	import { getLevelByScore } from '$lib/risk/Level';
+	import type Risk from '#lib/risk/Risk.svelte.js';
+	import { RiskSeverity, getColor, getSeverityByLevels } from '#lib/risk/RiskSeverity.js';
+	import { getLevelByScore } from '#lib/risk/Level.js';
 
 	let { risk = $bindable() }: { risk: Risk } = $props();
 

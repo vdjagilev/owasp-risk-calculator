@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { risks, deleteRisk } from '$lib/risk/Store';
+	import { risks, deleteRisk } from '#lib/risk/Store.js';
 	import { Button, Modal } from 'flowbite-svelte';
 
 	let popupModal = $state(false);

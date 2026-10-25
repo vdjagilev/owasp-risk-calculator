@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type IDescriptionable from '$lib/risk/IDescriptionable';
+	import type IDescriptionable from '#lib/risk/IDescriptionable.js';
 	import { Popover } from 'flowbite-svelte';
 	import InfoIcon from './icons/InfoIcon.svelte';
 

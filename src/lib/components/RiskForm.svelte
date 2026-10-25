@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type Risk from '$lib/risk/Risk.svelte';
+	import type Risk from '#lib/risk/Risk.svelte.js';
 	import FactorSetComponent from './FactorSet.svelte';
 	import FactorResult from './FactorResult.svelte';
 	import RiskResult from './RiskResult.svelte';

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type FactorSet from '$lib/risk/FactorSet.svelte';
+	import type FactorSet from '#lib/risk/FactorSet.svelte.js';
 	import Factor from './Factor.svelte';
-	import Details from '$lib/components/Details.svelte';
-	import FactorResult from '$lib/components/FactorResult.svelte';
+	import Details from '#lib/components/Details.svelte';
+	import FactorResult from '#lib/components/FactorResult.svelte';
 	import { Heading } from 'flowbite-svelte';
 	import Separator from './Separator.svelte';
 

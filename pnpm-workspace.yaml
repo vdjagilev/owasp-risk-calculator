@@ -1,4 +1,9 @@
 allowBuilds:
   '@parcel/watcher': false
   esbuild: true
-  svelte-preprocess: true
+
+overrides:
+  'undici@<5.28.4': '>=5.28.4'
+  'braces@<3.0.3': '>=3.0.3'
+  'micromatch@<4.0.8': '>=4.0.8'
+  'rollup@<3.29.5': '>=3.29.5'

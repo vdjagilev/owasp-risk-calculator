@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Risk from '$lib/risk/Risk.svelte';
+	import Risk from '#lib/risk/Risk.svelte.js';
 	import { Heading, Button, Tabs, TabItem } from 'flowbite-svelte';
-	import { editRisk, deleteRisk } from '$lib/risk/Store';
+	import { editRisk, deleteRisk } from '#lib/risk/Store.js';
 	import EditIcon from './icons/EditIcon.svelte';
 	import Radar from './charts/Radar.svelte';
 	import DeleteIcon from './icons/DeleteIcon.svelte';
@@ -25,10 +25,20 @@
 	<div class="break-all">
 		<Heading tag="h2">
 			Risk: {risk.name}
-			<Button color="light" size="xs" class="xs p-0 m-0 !border-0 !bg-transparent hover:!bg-transparent" onclick={() => editRisk.set(risk)}>
+			<Button
+				color="light"
+				size="xs"
+				class="xs p-0 m-0 !border-0 !bg-transparent hover:!bg-transparent"
+				onclick={() => editRisk.set(risk)}
+			>
 				<EditIcon />
 			</Button>
-			<Button color="light" size="xs" class="xs p-0 m-0 !border-0 !bg-transparent hover:!bg-transparent" onclick={() => deleteRisk.set(risk)}>
+			<Button
+				color="light"
+				size="xs"
+				class="xs p-0 m-0 !border-0 !bg-transparent hover:!bg-transparent"
+				onclick={() => deleteRisk.set(risk)}
+			>
 				<DeleteIcon />
 			</Button>
 		</Heading>

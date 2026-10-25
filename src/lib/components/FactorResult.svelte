@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type IScoreSource from '$lib/risk/IScoreSource';
-	import { Level, getColor, getLevelByScore } from '$lib/risk/Level';
+	import type IScoreSource from '#lib/risk/IScoreSource.js';
+	import { Level, getColor, getLevelByScore } from '#lib/risk/Level.js';
 
 	let {
 		name = $bindable(),
